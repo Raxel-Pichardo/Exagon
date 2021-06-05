@@ -1,0 +1,64 @@
+body {
+    background-color: #0d1c36;
+}
+
+#sun {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 200px;
+    width: 400px;
+    height: 400px;
+    animation-name: rotation;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#earth {
+    border-radius: 50%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    left: 0;
+    top: 425px;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    animation-name: traslation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#shadow-earth {
+    animation-name: shadow;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+}
+
+@keyframes rotation {
+     from {transform: rotateZ(0deg);}
+
+     to {transform: rotateZ(360deg);}
+}
+
+@keyframes traslation {
+    0% {z-index: 1;}
+    25% {left: 750px;}
+    50% {left: 1350px;}
+    51% {z-index: -1;}
+    75% {left: 750px;}
+    100% {left: 0; z-index: -1;}
+}
+
+@keyframes shadow {
+    0%   {opacity: 1;}
+    25%  {opacity: 0;}
+    50%  {opacity: 1;}
+    75%  {opacity: 0;}
+    100% {opacity: 1;}
+}
